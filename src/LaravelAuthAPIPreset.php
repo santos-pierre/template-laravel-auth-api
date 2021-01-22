@@ -16,7 +16,7 @@ class LaravelAuthAPIPreset extends Preset
             return str_replace("return route('login');", "return url(env('SPA_URL') . '/login');", $file);
         });
         // Environment File
-        $filesystem->append(base_path('.env'), $filesystem->get(__DIR__ . '/../stubs/.env'));
+        $filesystem->append(base_path('.env'), $filesystem->get(__DIR__ . '/../.env.example'));
     }
 
     /**
