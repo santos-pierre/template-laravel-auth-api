@@ -12,7 +12,6 @@ class LaravelAuthAPIPreset extends Preset
         $filesystem = new Filesystem();
         $filesystem->copyDirectory(__DIR__ . '/../stubs', base_path());
         // Sanctum Setup
-        $filesystem->copy(base_path('LaravelAuthAPI/stubs/Kernel.php'), app_path('Http/Kernel.php'));
         static::updateFile(base_path('app/Http/Middleware/Authenticate.php'), function ($file) {
             return str_replace("return route('login');", "return url(env('SPA_URL') . '/login');", $file);
         });
