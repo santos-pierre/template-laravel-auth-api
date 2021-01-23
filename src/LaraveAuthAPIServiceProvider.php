@@ -17,6 +17,7 @@ class LaraveAuthAPIServiceProvider extends ServiceProvider
         UiCommand::macro('laravel-auth-api', function ($command) {
             LaravelAuthAPIPreset::install();
             $command->info('Installation Complete!');
+            $command->comment('Migrate database => php artisan migrate or sail artisan migrate');
         });
     }
 }
